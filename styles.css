@@ -1,0 +1,175 @@
+:root {
+    /* Primary */
+
+    /* Bright orange */
+    --bright-orange: hsl(31, 77%, 52%);
+     /* Dark cyan */
+    --dark-cyan: hsl(184, 100%, 22%);
+    /* Very dark cyan */
+    --very-dark-cyan: hsl(179, 100%, 13%);
+
+     /* Neutral colors */
+
+    /* Transparent white (paragraphs) */
+    --transparent-white: hsla(0, 0%, 100%, 0.75);
+     /* Very light gray (background, headings, buttons) */
+    --very-light-gray: hsl(0, 0%, 95%);
+
+    /* Typography */
+    --ff-primary: 'Lexend Deca', sans-serif;
+    --ff-secondary: 'Big Shoulders Display', cursive;
+    --fw-regular: 400;
+    --fw-bold: 700;
+}
+
+/*
+1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+box-sizing: border-box;
+}
+/*
+2. Remove default margin
+*/
+* {
+margin: 0;
+padding: 0;
+font: inherit;
+}
+/*
+Typographic tweaks!
+3. Add accessible line-height
+4. Improve text rendering
+*/
+body {
+line-height: 1.5;
+-webkit-font-smoothing: antialiased;
+}
+/*
+5. Improve media defaults
+*/
+img, picture, video, canvas, svg {
+max-width: 100%;
+display: block;
+}
+/*
+6. Remove built-in form typography styles
+*/
+input, button, textarea, select {
+font: inherit;
+}
+/*
+7. Avoid text overflows
+*/
+p, h1, h2, h3, h4, h5, h6 {
+overflow-wrap: break-word;
+}
+
+/* General Styles */
+
+body {
+    font-size: 0.938rem;
+    font-weight: var(--fw-regular);
+    font-family: var(--ff-primary);
+    padding: 5rem 1.5rem;
+    min-height: 100svh;
+    display: grid;
+    place-content: center;
+    gap: 1.5rem;
+}
+
+/* Utilities */
+
+.bg-bright-orange {
+    background-color: var(--bright-orange);
+}
+
+.bg-dark-cyan {
+    background-color: var(--dark-cyan);
+}
+
+.bg-very-dark-cyan {
+    background-color: var(--very-dark-cyan);
+}
+
+.clr-bright-orange {
+    color: var(--bright-orange);
+}
+
+.clr-dark-cyan {
+    color: var(--dark-cyan);
+}
+
+.clr-very-dark-cyan {
+    color: var(--very-dark-cyan);
+}
+
+/* Card Styles */
+
+.cards {
+    max-width: 50rem;
+    border-radius: 0.4rem;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(16.625rem, 1fr));
+}
+
+.cards__card {
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+}
+
+.cards__card__heading {
+    font-size: 2em;
+    font-weight: var(--fw-bold);
+    font-family: var(--ff-secondary);
+    text-transform: uppercase;
+    color: white;
+}
+
+.cards__card__description {
+    font-size: 0.9em;
+    color: var(--transparent-white);
+    opacity: 0.8;
+}
+
+.cards__card__button {
+    width: 8rem;
+    height: 2.6rem;
+    margin-top: 1.5rem;
+    font-size: 0.9em;
+    border: 2px solid white;
+    border-radius: 5rem;
+    cursor: pointer;
+}
+
+.cards__card__button:hover {
+    background-color: inherit;
+    color: white;
+}
+
+.cards__card::before {
+    content: '';
+    width: 64px;
+    height: 40px;
+}
+
+.cards__card:nth-child(1)::before {
+    background-image: url('./images/icon-sedans.svg');
+}
+
+.cards__card:nth-child(2)::before {
+    background-image: url('./images/icon-suvs.svg');
+}
+
+.cards__card:nth-child(3)::before {
+    background-image: url('./images/icon-luxury.svg');
+}
+
+/* Footer Styles */
+
+footer {
+    text-align: center;
+}
